@@ -42,6 +42,7 @@ namespace mvcclient
                     options.SaveTokens = true;
                     options.GetClaimsFromUserInfoEndpoint = true;
                     options.Scope.Add("api1");
+                    //refresh
                     options.Scope.Add("offline_access");
                 });
         }

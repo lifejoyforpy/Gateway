@@ -87,7 +87,13 @@ namespace webapi
                 await next.Invoke();
             });
             app.UseAuthentication();
-            app.UseMvc();
+            app.UseMvc(routes=>{
+                routes.MapRoute(
+                    name:"default",
+                    template:"MyApi/{controller=home}/{action=index}/{id?}"
+                );
+            }
+            );
         }
     }
 }
